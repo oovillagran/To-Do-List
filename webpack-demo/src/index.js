@@ -3,6 +3,24 @@
 //import _ from 'lodash';
 import './style.css';
 
+const tasks = [
+  {
+    description: 'Make the breakfast',
+    completed: false,
+    index: 0,
+  },
+  {
+    description: 'Clean the yard',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Study JavaScript',
+    completed: false,
+    index: 2,
+  },
+]
+
 class Activity {
   constructor(description) {
     this.index = 0;
@@ -19,11 +37,8 @@ class Activity {
 }
 
 class TaskManager {
-  task1 = new Activity('Cook the breakfast');
-  task2 = new Activity('Clean the yard');
-  task3 = new Activity('Study javaScript');
-  taskList = [this.task1, this.task2, this.task3];
-
+  taskList = tasks.map((task, index) => new Activity(task.description, index, task.completed));
+  
   storageTaskList;
   storageKey = 'storageTaskList';
   storageKeyValue;
@@ -33,7 +48,7 @@ class TaskManager {
   checkBox = document.querySelectorAll('.box');
 
   loadCheckBox = () => {
-    this.checkBox.forEach.forEach((box) => {
+    this.checkBox.forEach((box) => {
       box.addEventListener('click', (e) => {
         e.target.classList.toggle('checked');
       });

@@ -100,3 +100,9 @@ li {
   border: none;
   cursor: pointer;
 }
+
+.checked {
+  background: red;
+  color: #fff;
+  outline: none;
+}

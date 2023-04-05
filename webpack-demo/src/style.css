@@ -6,13 +6,13 @@ html {
 }
 
 body {
-  background: rgb(63,94,251);
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,159,252,1) 77%);
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(70, 159, 252, 1) 77%);
 }
 
 .activities {
-  background: rgb(63,94,251);
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,159,252,1) 77%);
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(70, 159, 252, 1) 77%);
 }
 
 *,
@@ -25,7 +25,6 @@ body {
 
 .main-activities {
   margin: 0 30%;
-  /* padding: auto; */
   position: absolute;
   background-color: aquamarine;
   width: 40%;
@@ -41,12 +40,13 @@ body {
 
 .activities-list {
   list-style: none;
+  margin-left: 1rem;
 }
 
 .update {
   margin: auto 1rem;
-  /* padding: auto; */
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .input-div {
@@ -70,10 +70,6 @@ input::placeholder {
   font-size: 1.5rem;
   font-style: italic;
   line-height: 1.5rem;
-}
-
-.activities-list {
-  margin-left: 1rem;
 }
 
 li {
@@ -102,4 +98,5 @@ li {
   width: 100%;
   background-color: #f6f6f6;
   border: none;
+  cursor: pointer;
 }

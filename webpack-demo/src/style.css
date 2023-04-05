@@ -1,7 +1,108 @@
-.hello {
-  color: red;
+html {
+  box-sizing: border-box;
+  font-family: 'Lobster Two', cursive;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: bisque;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(70, 159, 252, 1) 77%);
+}
+
+.activities {
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(70, 159, 252, 1) 77%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.main-activities {
+  margin: 0 30%;
+  position: absolute;
+  background-color: aquamarine;
+  width: 40%;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activities-list {
+  list-style: none;
+  margin-left: 1rem;
+}
+
+.update {
+  margin: auto 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.input-div {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-title {
+  margin-left: 1rem;
+}
+
+.activities-input {
+  margin-left: 1rem;
+  height: 2rem;
+  width: 30rem;
+}
+
+input::placeholder {
+  font-family: 'Lobster Two', cursive;
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+.li-activity {
+  font-family: 'Lobster Two', cursive;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  height: 2rem;
+  width: 29rem;
+}
+
+.footer {
+  height: 3rem;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+
+.button {
+  text-align: center;
+  margin: auto;
+  padding-top: 0.5rem;
+  text-decoration: underline;
+  width: 100%;
+  background-color: #f6f6f6;
+  border: none;
+  cursor: pointer;
+}
+
+.checked {
+  background: red;
+  color: #fff;
+  outline: none;
 }

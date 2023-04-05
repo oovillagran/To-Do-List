@@ -3,7 +3,7 @@
 
 <div align="center">
 
-  <h3><b>Set up project with webpack</b></h3>
+  <h1><b>To Do List</b></h1>
 
 </div>
 
@@ -33,10 +33,10 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Set up project with webpack<a name="about-project"></a>
+# ✅ To Do List Project <a name="about-project"></a>
 
 
-**Set up project with webpack** is an exercise where I built a simple yet powerful webpack boilerplate, which can be later used as a starting point in my projects. I used the webpack official guides.
+**To do List project** is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. I built a website that allows for doing that. For this project I used ES6 and Webpack!.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -69,10 +69,12 @@
 ### Key Features <a name="key-features"></a>
 
 
-- Creating branches on repositories.
-- Use of linter on HTML&CSS project.
+- Use of linter on HTML&CSS&JavaScript projects.
 - Write a correct descriptive README file.
 - Perform a code review in a HTML and CSS project.
+- Use webpack to bundle JavaScript.
+- Learn how to use proper ES6 syntax.
+- Use ES6 modules to write modular JavaScript.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,7 +83,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- N/A
+- Live Demo is [here](https://oovillagran.github.io/To-Do-List/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

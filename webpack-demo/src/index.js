@@ -1,23 +1,57 @@
 /*eslint-disable*/
 
-import _ from 'lodash';
-import printMe from './print.js';
-//import './style.css';
+//import _ from 'lodash';
 
-function component() {
-  const element = document.createElement('div');
-  const btn = document.createElement('button');
+class Activity {
+  constructor(description) {
+    this.index = 0;
+    this.completed = false;
+    this.description = description;
+  }
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  //element.classList.add('hello');
-
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
-  
-  return element;
+  displayWindow = () => `
+    <label for="Item${this.index}">
+      <button type="button" class="box">&#x2714</button>
+      <input type="text" value="${this.description}" name="Item${this.index}" id="Item${this.index}">
+    </label>
+  `
 }
 
-document.body.appendChild(component());
+class TaskManager {
+  task1 = new Activity('Cook the breakfast');
+  task2 = new Activity('Clean the yard');
+  task3 = new Activity('Study javaScript');
+  taskList = [this.task1, this.task2, this.task3];
+
+  storageTaskList;
+  storageKey = 'storageTaskList';
+  storageKeyValue;
+
+  activitiesListSection = document.getElementById('activities-list');
+  activitiesInput = document.getElementById('activities-input');
+  checkBox = document.querySelectorAll('.box');
+
+  loadCheckBox = () => {
+    this.checkBox.forEach.forEach((box) => {
+      box.addEventListener('click', (e) => {
+        e.target.classList.toggle('checked');
+      });
+    });
+  }
+
+  loadActivities = () => {
+    for ( let i = 0; i < this.taskList.length; i++ ){
+      const itemList = document.createElement('li');
+      itemList.id = i;
+      this.taskList[i].index = i;
+      itemList.innerHTML = this.taskList[i].displayWindow();
+      this.activitiesListSection.appendChild(itemList);
+      this.checkBox = document.querySelectorAll('.box');
+    }
+    this.loadCheckBox();
+
+  }
+}
+
+const taskManager = new TaskManager();
+taskManager.loadActivities();

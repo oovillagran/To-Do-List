@@ -1,6 +1,7 @@
 /*eslint-disable*/
 
 //import _ from 'lodash';
+import './style.css';
 
 class Activity {
   constructor(description) {
@@ -12,7 +13,7 @@ class Activity {
   displayWindow = () => `
     <label for="Item${this.index}">
       <button type="button" class="box">&#x2714</button>
-      <input type="text" value="${this.description}" name="Item${this.index}" id="Item${this.index}">
+      <input type="text" class="li-activity" value="${this.description}" name="Item${this.index}" id="Item${this.index}">
     </label>
   `
 }

@@ -27,7 +27,7 @@ body {
   margin: 0 30%;
   position: absolute;
   background-color: aquamarine;
-  width: 40%;
+  width: 35%;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -105,4 +105,15 @@ li {
   background: red;
   color: #fff;
   outline: none;
+}
+
+.todoactivities {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.delete-button {
+  cursor: pointer;
+  margin-right: 0.5rem;
 }

@@ -20,7 +20,7 @@ class TaskManager {
   displayWindow = (task) => `
     <div class="todoactivities">
       <label for="Item${task.index}">
-        <button type="button" class="box" ${task.completed ? 'class="checked"' : ''}>&#x2714</button>
+        <button type="button" class="box" ${task.completed ? 'class="checked"' : ''}></button>
         <input type="text" class="li-activity" value="${task.description}" name="Item${task.index}" id="Item${task.index}">
           
       </label>

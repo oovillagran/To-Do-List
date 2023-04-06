@@ -63,6 +63,9 @@ body {
   margin-left: 1rem;
   height: 2rem;
   width: 30rem;
+  font-family: 'Lobster Two', cursive;
+  font-size: 1.5rem;
+  color: #807575;
 }
 
 input::placeholder {
@@ -116,4 +119,11 @@ li {
 .delete-button {
   cursor: pointer;
   margin-right: 0.5rem;
+}
+
+.box {
+  background-color: #fff;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: solid 1px #807575;
 }

@@ -1,5 +1,4 @@
 /*eslint-disable*/
-
 //import _ from 'lodash';
 import { TaskManager } from './modules/functionality.js';
 import './style.css';

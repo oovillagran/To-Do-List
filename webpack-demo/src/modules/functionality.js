@@ -25,7 +25,8 @@ class TaskManager {
           
       </label>
       <div id="index${task.index}" class="delete-button">
-        <i class="bi bi-trash3-fill"></i>
+        <i class="bi bi-trash3-fill novisible trash" id="delete${task.index}"></i>
+        <i class="bi bi-three-dots-vertical ellipse"></i>
       </div>
     </div>
   `
@@ -36,22 +37,13 @@ class TaskManager {
       box.addEventListener('click', (e) => {
         const parentElement = e.target.parentElement.parentElement;
         const taskId = parseInt(parentElement.dataset.taskIndex);
-        //const taskId = parseInt(e.target.parentElement.parentElement.id);
         const task = this.taskList.find((t) => t.index === taskId);
-        //const task = this.taskList[taskId];
         task.completed = !task.completed;
         this.saveTasks();
         e.target.classList.toggle('checked');
         const input = e.target.parentElement.querySelector('.li-activity');
         input.classList.toggle('checked');
-        // if (task.completed) {
-        //   input.style.textDecoration = 'line-through';
-        //   input.style.textDecorationStyle = 'double';
-        // } else {
-        //   input.style.textDecoration = 'none';
-        // }
         this.completionState(parseInt(e.target.parentElement.parentElement.id, 10));
-        //window.location.reload();
       });
     });
   }
@@ -73,14 +65,14 @@ class TaskManager {
   }
 
   loadActivities = () => {
-      const activitiesListSection = document.getElementById('activities-list');
-      for (let i = 0; i < this.taskList.length; i++) {
-          const itemList = document.createElement('li');
-          itemList.id = i + 1;
-          itemList.innerHTML = this.displayWindow(this.taskList[i]);
-          activitiesListSection.appendChild(itemList);
-      }
-      this.loadCheckBoxes();
+    const activitiesListSection = document.getElementById('activities-list');
+    for (let i = 0; i < this.taskList.length; i++) {
+      const itemList = document.createElement('li');
+      itemList.id = i + 1;
+      itemList.innerHTML = this.displayWindow(this.taskList[i]);
+      activitiesListSection.appendChild(itemList);
+    }
+    this.loadCheckBoxes();
   }
 
   deleteTask = (taskId) => {
@@ -99,18 +91,6 @@ class TaskManager {
 
   saveTasks = () => {
       localStorage.setItem(this.storageKey, JSON.stringify(this.taskList));
-  }
-
-  completeButton = document.querySelector('.button');
-
-  clearCompletedActivities = () => {
-    this.completeButton.addEventListener('click', () => {
-      const incompleteActivities = this.taskList.filter((task) => task.completed === true);
-      for (let i = 0; i < incompleteActivities.length; i++) {
-        const arrayIndex = incompleteActivities[i].index - 1;
-        this.deleteTask(arrayIndex);
-      }
-    });
   }
 }
 

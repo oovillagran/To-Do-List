@@ -30,7 +30,7 @@ activitiesInput.addEventListener('keypress', (e) => {
   }
 });
 
-const deleteButton = document.querySelectorAll('.delete-button');
+const deleteButton = document.querySelectorAll('.trash');
 deleteButton.forEach((button) => {
   button.addEventListener('click', (e) => {
     const taskId = parseInt(e.target.parentElement.parentElement.id) - 1;
@@ -50,9 +50,4 @@ activityField.forEach((field, i) => {
 });
 
 addClearButtonListener(taskManager);
-// const clearButton = document.getElementById('clear-button');
-// clearButton.addEventListener('click', () => {
-//   taskManager.taskList = taskManager.taskList.filter((task) => !task.completed);
-//   taskManager.saveTasks();
-//   window.location.reload();
-// })
+

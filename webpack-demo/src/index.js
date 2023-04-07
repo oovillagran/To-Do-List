@@ -33,7 +33,7 @@ const deleteButton = document.querySelectorAll('.delete-button');
 deleteButton.forEach((button) => {
   button.addEventListener('click', (e) => {
     const taskId = parseInt(e.target.parentElement.parentElement.id) - 1;
-    taskManager.deteleTask(taskId);
+    taskManager.deleteTask(taskId);
     window.location.reload();
   });
 });

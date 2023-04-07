@@ -137,3 +137,10 @@ li {
   align-items: center;
   gap: 0.25rem
 }
+
+.li-activity.checked {
+  background: aquamarine;
+  border: none;
+  text-decoration: line-through;
+  text-decoration-style: double;
+}

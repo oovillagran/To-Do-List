@@ -1,18 +1,19 @@
 //import _ from 'lodash';
+
 class TaskManager {
   constructor() {
-      this.taskList = JSON.parse(localStorage.getItem('tasks')) || [];
-      this.storageKey = 'tasks';
+    this.taskList = JSON.parse(localStorage.getItem('tasks')) || [];
+    this.storageKey = 'tasks';
   }
 
   createTask = (description) => {
-      const newTask = {
-          description: description,
-          completed: false,
-          index: this.taskList.length + 1,
-      };
-      this.taskList.push(newTask);
-      this.saveTasks();
+    const newTask = {
+      description: description,
+      completed: false,
+      index: this.taskList.length + 1,
+    };
+    this.taskList.push(newTask);
+    this.saveTasks();
   }
 
   displayWindow = (task) => `
@@ -28,7 +29,7 @@ class TaskManager {
       </div>
     </div>
   `
-  
+
   loadCheckBoxes = () => {
     const checkBoxes = document.querySelectorAll('.box');
     checkBoxes.forEach((box) => {
@@ -74,22 +75,22 @@ class TaskManager {
   }
 
   deleteTask = (taskId) => {
-      this.taskList.splice(taskId, 1);
-      for (let i = taskId; i < this.taskList.length; i++) {
-          this.taskList[i].index--;
-      }
-      this.saveTasks();
+    this.taskList.splice(taskId, 1);
+    for (let i = taskId; i < this.taskList.length; i++) {
+      this.taskList[i].index - 1;
+    }
+    this.saveTasks();
   }
 
   upDateTask = (taskId, newDescription) => {
-      this.taskList[taskId].description = newDescription;
-      this.saveTasks();
-      window.location.reload();
+    this.taskList[taskId].description = newDescription;
+    this.saveTasks();
+    window.location.reload();
   }
 
   saveTasks = () => {
-      localStorage.setItem(this.storageKey, JSON.stringify(this.taskList));
+    localStorage.setItem(this.storageKey, JSON.stringify(this.taskList));
   }
 }
 
-export { TaskManager };
+export default TaskManager;

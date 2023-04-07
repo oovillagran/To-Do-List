@@ -1,4 +1,4 @@
-export function addClearButtonListener (taskManager) {
+export default function addClearButtonListener(taskManager) {
   const clearButton = document.getElementById('clear-button');
   clearButton.addEventListener('click', () => {
     taskManager.taskList = taskManager.taskList.filter((task) => !task.completed);

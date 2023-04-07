@@ -135,7 +135,7 @@ li {
 .tasks-list {
   display: flex;
   align-items: center;
-  gap: 0.25rem
+  gap: 0.25rem;
 }
 
 .li-activity.checked {
@@ -144,7 +144,6 @@ li {
   text-decoration: line-through;
   text-decoration-style: double;
 }
-
 
 .delete-button.show-trash .trash {
   display: block;

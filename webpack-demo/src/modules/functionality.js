@@ -19,8 +19,8 @@ class TaskManager {
 
   displayWindow = (task) => `
     <div class="todoactivities">
-      <label for="Item${task.index}">
-        <button type="button" class="box" ${task.completed ? 'class="checked"' : ''}></button>
+      <label for="Item${task.index}" class="tasks-list">
+        <button type="button" class="box" ${task.completed ? 'class="checked"' : ''}>&#x2713;</button>
         <input type="text" class="li-activity" value="${task.description}" name="Item${task.index}" id="Item${task.index}">
           
       </label>
@@ -34,10 +34,10 @@ class TaskManager {
       const checkBoxes = document.querySelectorAll('.box');
       checkBoxes.forEach((box) => {
           box.addEventListener('click', (e) => {
-              const taskId = parseInt(e.target.parentElement.parentElement.id);
-              const task = taskManager.taskList[taskId];
-              task.completed = !task.completed;
-              taskManager.saveTasks();
+              //const taskId = parseInt(e.target.parentElement.parentElement.id);
+              //const task = this.taskList[taskId];
+              //task.completed = !task.completed;
+              //this.saveTasks();
               e.target.classList.toggle('checked');
           });
       });

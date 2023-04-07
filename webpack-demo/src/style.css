@@ -104,10 +104,13 @@ li {
   cursor: pointer;
 }
 
-.checked {
-  background: red;
-  color: #fff;
-  outline: none;
+.box.checked {
+  background: aquamarine;
+  color: #000;
+  /* outline: none; */
+  font-weight: 700;
+  border: none;
+  font-size: 1rem;
 }
 
 .todoactivities {
@@ -123,7 +126,14 @@ li {
 
 .box {
   background-color: #fff;
+  color: #fff;
   width: 1.5rem;
   height: 1.5rem;
   border: solid 1px #807575;
+}
+
+.tasks-list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem
 }

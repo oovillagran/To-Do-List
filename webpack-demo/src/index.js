@@ -1,6 +1,7 @@
 /*eslint-disable*/
 //import _ from 'lodash';
 import { TaskManager } from './modules/functionality.js';
+import { addClearButtonListener } from './modules/clear.js';
 import './style.css';
 
 const taskManager = new TaskManager();
@@ -48,9 +49,10 @@ activityField.forEach((field, i) => {
   });
 });
 
-const clearButton = document.getElementById('clear-button');
-clearButton.addEventListener('click', () => {
-  taskManager.taskList = taskManager.taskList.filter((task) => !task.completed);
-  taskManager.saveTasks();
-  window.location.reload();
-})
+addClearButtonListener(taskManager);
+// const clearButton = document.getElementById('clear-button');
+// clearButton.addEventListener('click', () => {
+//   taskManager.taskList = taskManager.taskList.filter((task) => !task.completed);
+//   taskManager.saveTasks();
+//   window.location.reload();
+// })

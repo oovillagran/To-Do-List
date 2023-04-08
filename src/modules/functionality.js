@@ -1,20 +1,19 @@
-/*eslint-disable*/
+// import _ from 'lodash';
 
-//import _ from 'lodash';
 class TaskManager {
   constructor() {
-      this.taskList = JSON.parse(localStorage.getItem('tasks')) || [];
-      this.storageKey = 'tasks';
+    this.taskList = JSON.parse(localStorage.getItem('tasks')) || [];
+    this.storageKey = 'tasks';
   }
 
   createTask = (description) => {
-      const newTask = {
-          description: description,
-          completed: false,
-          index: this.taskList.length + 1,
-      };
-      this.taskList.push(newTask);
-      this.saveTasks();
+    const newTask = {
+      description,
+      completed: false,
+      index: this.taskList.length + 1,
+    };
+    this.taskList.push(newTask);
+    this.saveTasks();
   }
 
   displayWindow = (task) => `
@@ -30,13 +29,12 @@ class TaskManager {
       </div>
     </div>
   `
-  
+
   loadCheckBoxes = () => {
     const checkBoxes = document.querySelectorAll('.box');
     checkBoxes.forEach((box) => {
       box.addEventListener('click', (e) => {
-        const parentElement = e.target.parentElement.parentElement;
-        const taskId = parseInt(parentElement.dataset.taskIndex);
+        const taskId = parseInt(e.target.parentElement.parentElement.dataset.taskIndex, 10);
         const task = this.taskList.find((t) => t.index === taskId);
         task.completed = !task.completed;
         this.saveTasks();
@@ -49,7 +47,7 @@ class TaskManager {
   }
 
   completionState = (parentIndex) => {
-    for (let i = 0; i < this.taskList.length; i++) {
+    for (let i = 0; i < this.taskList.length; i += 1) {
       if (this.taskList[i].index === parentIndex + 1) {
         if (this.taskList[i].completed === true) {
           this.taskList[i].completed = false;
@@ -66,7 +64,7 @@ class TaskManager {
 
   loadActivities = () => {
     const activitiesListSection = document.getElementById('activities-list');
-    for (let i = 0; i < this.taskList.length; i++) {
+    for (let i = 0; i < this.taskList.length; i += 1) {
       const itemList = document.createElement('li');
       itemList.id = i + 1;
       itemList.innerHTML = this.displayWindow(this.taskList[i]);
@@ -76,22 +74,22 @@ class TaskManager {
   }
 
   deleteTask = (taskId) => {
-      this.taskList.splice(taskId, 1);
-      for (let i = taskId; i < this.taskList.length; i++) {
-          this.taskList[i].index--;
-      }
-      this.saveTasks();
+    this.taskList.splice(taskId, 1);
+    for (let i = taskId; i < this.taskList.length; i += 1) {
+      this.taskList[i].index -= 1;
+    }
+    this.saveTasks();
   }
 
   upDateTask = (taskId, newDescription) => {
-      this.taskList[taskId].description = newDescription;
-      this.saveTasks();
-      window.location.reload();
+    this.taskList[taskId].description = newDescription;
+    this.saveTasks();
+    window.location.reload();
   }
 
   saveTasks = () => {
-      localStorage.setItem(this.storageKey, JSON.stringify(this.taskList));
+    localStorage.setItem(this.storageKey, JSON.stringify(this.taskList));
   }
 }
 
-export { TaskManager };
+export default TaskManager;

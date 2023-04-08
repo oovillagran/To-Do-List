@@ -8,7 +8,7 @@ class TaskManager {
 
   createTask = (description) => {
     const newTask = {
-      description: description,
+      description,
       completed: false,
       index: this.taskList.length + 1,
     };
@@ -34,8 +34,7 @@ class TaskManager {
     const checkBoxes = document.querySelectorAll('.box');
     checkBoxes.forEach((box) => {
       box.addEventListener('click', (e) => {
-        const parentElement = e.target.parentElement.parentElement;
-        const taskId = parseInt(parentElement.dataset.taskIndex);
+        const taskId = parseInt(e.target.parentElement.parentElement.dataset.taskIndex, 10);
         const task = this.taskList.find((t) => t.index === taskId);
         task.completed = !task.completed;
         this.saveTasks();
@@ -48,7 +47,7 @@ class TaskManager {
   }
 
   completionState = (parentIndex) => {
-    for (let i = 0; i < this.taskList.length; i++) {
+    for (let i = 0; i < this.taskList.length; i += 1) {
       if (this.taskList[i].index === parentIndex + 1) {
         if (this.taskList[i].completed === true) {
           this.taskList[i].completed = false;
@@ -65,7 +64,7 @@ class TaskManager {
 
   loadActivities = () => {
     const activitiesListSection = document.getElementById('activities-list');
-    for (let i = 0; i < this.taskList.length; i++) {
+    for (let i = 0; i < this.taskList.length; i += 1) {
       const itemList = document.createElement('li');
       itemList.id = i + 1;
       itemList.innerHTML = this.displayWindow(this.taskList[i]);
@@ -76,7 +75,7 @@ class TaskManager {
 
   deleteTask = (taskId) => {
     this.taskList.splice(taskId, 1);
-    for (let i = taskId; i < this.taskList.length; i++) {
+    for (let i = taskId; i < this.taskList.length; i += 1) {
       this.taskList[i].index - 1;
     }
     this.saveTasks();

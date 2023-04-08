@@ -1,4 +1,4 @@
-//import _ from 'lodash';
+// import _ from 'lodash';
 
 class TaskManager {
   constructor() {
@@ -76,7 +76,7 @@ class TaskManager {
   deleteTask = (taskId) => {
     this.taskList.splice(taskId, 1);
     for (let i = taskId; i < this.taskList.length; i += 1) {
-      this.taskList[i].index - 1;
+      this.taskList[i].index -= 1;
     }
     this.saveTasks();
   }

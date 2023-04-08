@@ -83,7 +83,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- Live Demo is [here](https://oovillagran.github.io/To-Do-List/webpack-demo/dist/index.html)
+- Live Demo is [here](https://oovillagran.github.io/To-Do-List/dist/index.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

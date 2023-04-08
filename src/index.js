@@ -33,7 +33,7 @@ activitiesInput.addEventListener('keypress', (e) => {
 const deleteButton = document.querySelectorAll('.trash');
 deleteButton.forEach((button) => {
   button.addEventListener('click', (e) => {
-    const taskId = parseInt(e.target.parentElement.parentElement.id) - 1;
+    const taskId = parseInt(e.target.parentElement.parentElement.id, 10) - 1;
     taskManager.deleteTask(taskId);
     window.location.reload();
   });
